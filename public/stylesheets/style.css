@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  padding: 20px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #740217;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  margin-top: 20px;
+  height: 100px;
+}
+
+.opciones{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.opciones a{
+  transition: transform 0.6s ease-in-out;
+}
+
+.opciones a:hover{
+  transform: scale(1.1);
+}
+
+.opciones .servicios img{
+  height: 170px;
+  border: 2px #d4af37 solid;
+  padding: 30px 70px;
+}
+
+footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+footer #gluna{
+  height: 50px;
+}
+
+footer .ubicacion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer #ubicacion{
+  height: 30px;
+}
+
+footer p{
+  font-size: 15px;
+  color: #d4af37;
+}
+
+/*RESPONSIVE*/
+
+/*@media screen and (min-width: 2560px){
+  .logo img {
+    margin-top: 50px;
+    height: 200px;
+  }
+
+  .opciones .servicios img{
+    height: 500px;
+  }
+
+  footer #gluna{
+    height: 150px;
+  }
+
+  footer #ubicacion{
+    height: 60px;
+  }
+  
+  footer p{
+    font-size: 45px;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .opciones{
+    margin-top: 150px;
+  }
+}*/
+
+@media screen and (max-width: 425px){
+  .opciones{
+    margin-top: 150px;
+    display: block;
+    text-align: center;
+  }
+
+  #abogado{
+    margin-top: 70px;
+  }
+
+  .logo img {
+    height: 150px;
+  }
+
+  .opciones .servicios img{
+    height: 300px;
+  }
+
+  footer{
+    display: block;
+    text-align: center;
+    position: relative;
+    margin-top: 150px;
+  }
+
+   footer #gluna{
+    height: 130px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  footer #ubicacion{
+    height: 50px;
+  }
+  
+  footer p{
+    font-size: 30px;
+  }
+
+}

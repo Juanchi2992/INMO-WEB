@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Panel de Control</title>
+    <link rel="stylesheet" href="/stylesheets/panel.css">
+</head>
+<body>
+
+  <header>
+    <img src="/images/logoinmo.png" alt="">
+    <p>Hola, administrador</p>
+  </header>
+
+  <h2>PROPIEDADES</h2>
+
+  <table class="tabla">
+    <thead>
+      <tr class="info espaciado">
+        <th>Código</th>
+        <th>Inmueble</th>
+        <th>Tipo</th>
+        <th>Dirección</th>
+        <th>Habitaciones</th>
+        <th>Baños</th>
+        <th>M2</th>
+        <th>Precio</th>
+        <th colspan="2"><a href="/editar">Agregar</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="fila espaciado">
+        <td>01</td>
+        <td>DEPARTAMENTO</td>
+        <td>ALQUILER</td>
+        <td>AV. SIEMPREVIVA</td>
+        <td>2</td>
+        <td>1</td>
+        <td>50</td>
+        <td>$60000</td>
+        <td><a href="/editar">Editar</a></td>
+        <td><button onclick="borrarFila(this)">Borrar</button></td>
+      </tr>
+    </tbody>
+
+    <tbody>
+      <tr class="fila espaciado">
+        <td>02</td>
+        <td>CASA</td>
+        <td>VENTA</td>
+        <td>AV. SIEMPREVIVA</td>
+        <td>3</td>
+        <td>2</td>
+        <td>120</td>
+        <td>U$160000</td>
+        <td><a href="/editar">Editar</a></td>
+        <td><button onclick="borrarFila(this)">Borrar</button></td>
+      </tr>
+    </tbody>
+  </table>
+     
+  <%- include('../partials/footer') %>
+
+</body>
+</html>

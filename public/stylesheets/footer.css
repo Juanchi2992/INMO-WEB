@@ -1,0 +1,58 @@
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+  
+footer #gluna{
+    height: 4rem;
+}
+  
+footer .ubicacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+footer #ubicacion{
+    height: 2.5rem;
+}
+  
+footer p{
+    font-size: 1rem;
+    color: #750317;
+}
+
+footer .redes{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+footer .redes a img{
+    height: 2.5rem;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 425px){
+    footer{
+        display: block;
+        text-align: center;
+        line-height: 4rem;
+    }
+
+    footer .redes{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    footer .redes a img{
+        height: 2.5rem;
+        margin-left: 0;
+    }
+}

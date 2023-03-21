@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alquiler</title>
+    <link rel="stylesheet" href="/stylesheets/alquiler.css">
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+    <h1>ALQUILER</h1>
+
+    <div class="buscador">
+        <form action="/search" method="GET">
+            <input type="text" name="query" placeholder="¿Qué está buscando?">
+            <button href="" type="submit" >Buscar</button>
+        </form>
+    </div>
+
+    <section class="card-container">
+
+        <a class="card" href="/propiedad">
+            <h2>DEPARTAMENTO</h2>
+            <img src="/images/interior1.jpg" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat consequuntur aut tenetur quaerat quod inventore
+                odio rem est incidunt molestias laboriosam.
+            </p>
+            <h3>$50000</h3>
+        </a>
+        
+        <a class="card" href="/propiedad">
+            <h2>DEPARTAMENTO</h2>
+            <img src="/images/interior1.jpg" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat consequuntur aut tenetur quaerat quod inventore
+                odio rem est incidunt molestias laboriosam.
+            </p>
+            <h3>$50000</h3>
+        </a>
+
+        <a class="card" href="/propiedad">
+            <h2>CASA</h2>
+            <img src="/images/interior2.jpg" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat consequuntur aut tenetur quaerat quod inventore
+                odio rem est incidunt molestias laboriosam.
+            </p>
+            <h3>$50000</h3>
+        </a>
+
+        <a class="card" href="/propiedad">
+            <h2>DEPARTAMENTO</h2>
+            <img src="/images/interior1.jpg" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat consequuntur aut tenetur quaerat quod inventore
+                odio rem est incidunt molestias laboriosam.
+            </p>
+            <h3>$50000</h3>
+        </a>
+
+        <a class="card" href="/propiedad">
+            <h2>CASA</h2>
+            <img src="/images/interior2.jpg" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat consequuntur aut tenetur quaerat quod inventore
+                odio rem est incidunt molestias laboriosam.
+            </p>
+            <h3>$50000</h3>
+        </a>
+
+    </section>
+
+
+
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

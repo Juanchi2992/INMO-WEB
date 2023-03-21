@@ -1,0 +1,270 @@
+html{
+    height: 90%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-image: url(../images/fondoretrado.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 20px 100px;
+}
+
+/* BARRA DE NAVEGACION */
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-bar img{
+    height: 130px;
+}
+
+.nav-bar .botones{
+    display: flex;
+}
+
+.nav-bar button{
+    border: none;
+    background: none;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #750317;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-bar button:hover{
+    transform: scale(1.1);
+}
+
+
+
+section {
+    display: none;
+    transition: opacity 4s ease-in-out;
+    /*padding-bottom: 50px;*/
+}
+
+.section.active {
+    display: block;
+}
+
+/* SECCION UNO */
+
+#section1{
+    /*margin-top: 100px;*/
+    /*margin-bottom: 102px;*/
+}
+
+#section1 h1{
+    font-size: 60px;
+    margin-bottom: 30px; 
+    color: #750317;
+}
+
+#section1 p{
+    font-size: 23px; 
+    padding-right: 27%;
+}
+
+/*SECCION DOS*/
+#section2{
+    /*padding-bottom: 27px;*/
+}
+
+h2{
+    color: #750317;
+    text-align: center;
+    font-size: 30px;
+}
+
+article{
+    background-color: rgba(255, 255, 255, 0.281);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);   
+    width: 40%;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px #0000008c;
+}
+
+article h3{
+    text-align: center;
+    font-size: 35px;
+    margin: 0;
+}
+
+article p{
+    text-align: center;
+}
+
+.service-1{
+    display: flex;
+    justify-content: space-around;
+}
+
+.service-2{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+
+/* SECCION 3*/
+
+#section3 {
+    /*padding-bottom: 13px;*/
+}
+
+#section3 .nosotros{
+    display: flex;
+    align-items: center;
+    background-color: #750317;
+    border-radius: 7px;
+    color: antiquewhite;
+    margin-right: 20%;
+    margin-left: 20%;
+    padding: 20px;
+}
+
+#section3 .nosotros h3{
+    font-size: 55px;
+    font-weight: 400;
+    margin-right: 30px;
+    text-align: right;
+}
+
+#section3 .nosotros p{
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0;
+}
+
+/*CONTACTO*/
+
+.enlaces{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    /*margin-bottom: 174px;*/
+}
+
+#section4 img{
+    height: 80px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#section4 img:hover{
+    transform: scale(1.1);
+}
+
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*position: relative;*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /*padding-bottom: 15px;*/
+    /*margin-left: 120px;*/
+    margin-top: auto;
+}
+  
+footer #gluna{
+    height: 50px;
+}
+  
+footer .ubicacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+footer #ubicacion{
+    height: 30px;
+}
+  
+footer p{
+    font-size: 15px;
+    color: #750317;
+}
+
+footer .redes{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+footer .redes a img{
+    height: 30px;
+    margin-left: 20px;
+}
+
+/* RESPONSIVE*/
+
+/* MENU HAMBURGUESA */
+.abrir-boton{
+    display: none;
+}
+
+.cerrar-menu{
+    display: none;
+}
+
+
+@media screen and (max-width: 425px){
+    .abrir-boton{
+        display: block;
+    }
+
+     .cerrar-menu{
+        display: block;
+    }
+
+
+    .nav-bar .botones{
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #750318c4;
+        gap: 40px;
+        padding-top: 60px;
+    }
+
+    .nav-bar .botones.visibles{
+        opacity: 1;
+        visibility: visible;
+    }
+
+   
+
+    .nav-bar .botones button{
+        color: aliceblue;
+    }
+
+
+    .nav-bar img{
+        height: 70px;
+    }
+
+    section{
+        display: block;
+    }
+}

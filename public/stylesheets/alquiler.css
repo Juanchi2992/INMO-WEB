@@ -1,0 +1,117 @@
+html{
+    height: 90%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-image: url(../images/fondoinmo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right bottom;
+    background-attachment: fixed;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 10px 100px;
+}
+
+h1{
+    text-align: center;
+    color: #750317;
+}
+.buscador{
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+input[type="text"]{
+    height: 2rem;
+    border: none;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+    width: 60%;
+    padding: 5px;
+    font-size: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+button[type="submit"]{
+    height: 2.65rem;
+    box-shadow: 3px 2px 4px 2px rgba(0, 0, 0, 0.3);
+    border: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #afafaf;
+    color: #464646;
+}
+
+button[type="submit"]:hover{
+    color: white;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 70px 0px;
+}
+
+.card{
+    background: #f0f0f0;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+    width: 25%;
+    padding: 5px 10px;
+    flex-basis: 25%;
+    flex-grow: 0;
+    margin: 2.3rem;
+    color: black;
+    text-decoration: none;
+    transition: transform 0.6s ease-in-out;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card img{
+    width: 100%;
+}
+
+.card h2{
+    font-size: 1.2rem;
+}
+
+.card h3{
+    font-size: 2rem;
+    color: #750317;
+    text-align: right;
+    margin: 5px 0px;
+}
+
+
+@media screen and (max-width: 768px){
+    body{
+        padding: 20px 30px;
+    }
+}
+
+
+@media screen and (max-width: 425px){
+    input[type="text"]{
+        height: 1rem;
+    }
+
+    button[type="submit"]{
+        height: 1.6rem;
+    }
+}

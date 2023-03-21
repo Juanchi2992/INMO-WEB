@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Venta</title>
+    <link rel="stylesheet" href="/stylesheets/venta.css">
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+    <h1>VENTA</h1>
+
+    <div class="buscador">
+    <form action="/search" method="GET">
+        <input type="text" name="query" placeholder="¿Qué está buscando?">
+        <button type="submit">Buscar</button>
+    </form>
+    </div>
+
+    <%- include('../partials/footer') %>
+    
+</body>
+</html>

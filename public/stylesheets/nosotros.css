@@ -1,0 +1,28 @@
+html{
+    height: 90%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-image: url(../images/fondoinmo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right bottom;
+    background-attachment: fixed;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 10px 100px;
+}
+
+h1{
+    text-align: center;
+    color: #750317;
+}
+
+.text{
+    text-align: center;
+    padding: 0px 5%;
+    font-size: 1.2rem;
+}
