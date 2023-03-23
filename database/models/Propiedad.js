@@ -7,14 +7,14 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         nombre: dataTypes.STRING,
-	tipos_id: {type: dataTypes.INTEGER, foreignKey: true},
-	descripcion: dataTypes.STRING,
+	    tipos_id: {type: dataTypes.INTEGER, foreignKey: true},
+	    descripcion: dataTypes.STRING,
         precio: dataTypes.INTEGER,	
-	contrato: dataTypes.BINARY,
+	    contrato: dataTypes.BINARY,
         disponibilidad_id: {type: dataTypes.INTEGER, foreignKey: true},
         habitaciones: dataTypes.INTEGER,
-	banos: dataTypes.INTEGER,
-	m2: dataTypes.INTEGER,
+	    banos: dataTypes.INTEGER,
+	    m2: dataTypes.INTEGER,
     };
     const config= {
         tableName: "propiedades",
