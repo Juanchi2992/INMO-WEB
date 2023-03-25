@@ -22,43 +22,31 @@
         <th>Código</th>
         <th>Inmueble</th>
         <th>Tipo</th>
-        <th>Dirección</th>
         <th>Habitaciones</th>
         <th>Baños</th>
         <th>M2</th>
         <th>Precio</th>
-        <th colspan="2"><a href="/editar">Agregar</a></th>
+        <th colspan="2"><a href="/agregar">Agregar</a></th>
       </tr>
     </thead>
-    <tbody>
-      <tr class="fila espaciado">
-        <td>01</td>
-        <td>DEPARTAMENTO</td>
-        <td>ALQUILER</td>
-        <td>AV. SIEMPREVIVA</td>
-        <td>2</td>
-        <td>1</td>
-        <td>50</td>
-        <td>$60000</td>
-        <td><a href="/editar">Editar</a></td>
-        <td><button onclick="borrarFila(this)">Borrar</button></td>
-      </tr>
-    </tbody>
-
-    <tbody>
-      <tr class="fila espaciado">
-        <td>02</td>
-        <td>CASA</td>
-        <td>VENTA</td>
-        <td>AV. SIEMPREVIVA</td>
-        <td>3</td>
-        <td>2</td>
-        <td>120</td>
-        <td>U$160000</td>
-        <td><a href="/editar">Editar</a></td>
-        <td><button onclick="borrarFila(this)">Borrar</button></td>
-      </tr>
-    </tbody>
+    <% if(propiedades != undefined){ %>
+      <% for (let i = 0; i < propiedades.length; i++){ %>
+        <tbody>
+          <tr class="fila espaciado">
+            <td><%= propiedades[i].id %></td>
+            <td><%= propiedades[i].nombre %></td>
+            <td><%= propiedades[i].tipo.nombre %></td>
+            <td><%= propiedades[i].habitaciones %></td>
+            <td><%= propiedades[i].banos %></td>
+            <td><%= propiedades[i].m2 %></td>
+            <td><%= propiedades[i].precio %></td>
+            <td><a href="/editar/<%= propiedades[i].id %>">Editar</a></td>
+            <td><a href="/borrar/<%= propiedades[i].id %>">Borrar</a></td>
+          </tr>
+        </tbody>
+      </a>
+      <% } %>
+  <% } %>
   </table>
      
   <%- include('../partials/footer') %>

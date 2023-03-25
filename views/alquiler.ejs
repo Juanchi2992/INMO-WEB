@@ -14,25 +14,28 @@
     <h1>ALQUILER</h1>
 
     <div class="buscador">
-        <form action="/search" method="GET">
-            <input type="text" name="query" placeholder="¿Qué está buscando?">
+        <form method="GET" action="/search">
+            <input type="text" placeholder="¿Qué está buscando?" name="query" >
             <button href="" type="submit" >Buscar</button>
+        </div>
         </form>
     </div>
 
-    <section class="card-container">
+    <section class="card-container"> 
 
+        <% if(propiedades != undefined){ %>
+        <% for (let i = 0; i < propiedades.length; i++){ %>
         <a class="card" href="/propiedad">
-            <h2>DEPARTAMENTO</h2>
+            <h2><%= propiedades[i].nombre %></</h2>
             <img src="/images/interior1.jpg" alt="">
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat consequuntur aut tenetur quaerat quod inventore
-                odio rem est incidunt molestias laboriosam.
+                <%= propiedades[i].descripcion %>
             </p>
-            <h3>$50000</h3>
+            <h3>$<%= propiedades[i].precio %></h3>
         </a>
-        
+        <% } %>
+        <% } %>
+
         <a class="card" href="/propiedad">
             <h2>DEPARTAMENTO</h2>
             <img src="/images/interior1.jpg" alt="">

@@ -3,6 +3,17 @@ var router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+// Para guardar los archivos de imagen al crear producto uso el paquete multer
+var storage = multer.diskStorage({
+  destination: function(req, file, cb){
+      cb(null, 'public/images/producto')
+  },
+  filename: function(req, file, cb){
+      cb(null, file.originalname)
+  }
+})
+var upload = multer({ storage: storage })
+
 const mainController = require('../controllers/mainController');
 
 /* GET home page. */
@@ -21,9 +32,7 @@ router.get('/inmo', function(req, res, next) {
 });
 
 /* GET alquiler page. */
-router.get('/alquiler', function(req, res, next) {
-  res.render('alquiler', { title: 'ALQUILER' });
-});
+router.get('/alquiler',  mainController.alquiler);
 
 /* GET venta page. */
 router.get('/venta', mainController.venta);
@@ -44,18 +53,29 @@ router.get('/login', function(req, res, next) {
 });
 
 /* GET panel de administrador page. */
-router.get('/panel', function(req, res, next) {
-  res.render('panel', { title: 'PANEL' });
-});
+router.get('/panel', mainController.panel);
 
 /* GET editar page. */
-router.get('/editar', function(req, res, next) {
-  res.render('editar', { title: 'editar' });
+router.get('/editar/:id', mainController.editar);
+
+/* POST editar page. */
+router.post('/editar/:id', upload.any(), mainController.actualizar); 
+
+/* GET agregar page. */
+router.get('/agregar', function(req, res, next) {
+  res.render('agregar', { title: 'agregar' });
 });
 
+/* GET agregar page. */
+router.post('/agregar', upload.any(), mainController.agregarPropiedad);
+
+/* GET borrar page. */
+router.get('/borrar/:id', mainController.borrar);
+
 /* GET propiedad page. */
-router.get('/propiedad', function(req, res, next) {
-  res.render('propiedad', { title: 'propiedad' });
-});
+router.get('/propiedad/:id', mainController.propiedadDetalle);
+
+/* GET search. */
+router.get('/search', mainController.search);
 
 module.exports = router;

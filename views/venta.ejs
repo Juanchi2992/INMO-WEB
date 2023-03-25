@@ -14,11 +14,26 @@
     <h1>VENTA</h1>
 
     <div class="buscador">
-    <form action="/search" method="GET">
-        <input type="text" name="query" placeholder="¿Qué está buscando?">
-        <button type="submit">Buscar</button>
-    </form>
+        <form method="GET" action="/search">
+            <input type="text" placeholder="¿Qué está buscando?" name="query" >
+            <button href="" type="submit" >Buscar</button>
+        </div>
+        </form>
     </div>
+    
+    <% if(propiedades != undefined){ %>
+        <% for (let i = 0; i < propiedades.length; i++){ %>
+        <a class="card" href="/propiedad/<%=propiedades[i].id%>">
+            <h2><%= propiedades[i].nombre %></</h2>
+            <img src="/images/interior1.jpg" alt="">
+            <p>
+                <%= propiedades[i].descripcion %>
+            </p>
+            <h3>$<%= propiedades[i].precio %></h3>
+        </a>
+        <% } %>
+    <% } %>
+
     
     <%- include('../partials/footer') %>
     

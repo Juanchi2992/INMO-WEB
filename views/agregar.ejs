@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Editar</title>
+    <title>Agregar</title>
     <link rel="stylesheet" href="/stylesheets/editar.css">
 </head>
 <body>
@@ -25,10 +25,9 @@
                 <form method="POST" enctype="multipart/form-data">
                     <div>
                       <label for="titulo">Título:</label>
-                      <input type="text" id="titulo" name="titulo" required placeholder="<%=propiedad.nombre%>">
+                      <input type="text" id="titulo" name="titulo" required>
                     </div>
                     <div>
-                    
                       <label for="tipo">Tipo:</label>
                       <select id="tipo" name="tipo" required>
                         <option value="">Seleccione una opción</option>
@@ -40,26 +39,26 @@
                     </div>
                     <div>
                       <label for="habitaciones">Habitaciones:</label>
-                      <input type="number" id="habitaciones" name="habitaciones" min="0" required placeholder="<%=propiedad.habitaciones%>">
+                      <input type="number" id="habitaciones" name="habitaciones" min="0" required>
                     </div>
                     <div>
                       <label for="baños">Baños:</label>
-                      <input type="number" id="baños" name="banos" min="0" required placeholder="<%=propiedad.banos%>">
+                      <input type="number" id="baños" name="banos" min="0" required>
                     </div>
                     <div>
                       <label for="m2">M2:</label>
-                      <input type="number" id="m2" name="m2" min="0" required placeholder="<%=propiedad.m2%>">
+                      <input type="number" id="m2" name="m2" min="0" required>
                     </div>
                     <div>
                       <label for="precio">Precio:</label>
-                      <input type="number" id="precio" name="precio" min="0" required placeholder="<%=propiedad.precio%>">
+                      <input type="number" id="precio" name="precio" min="0" required>
                     </div>
                     <div>
                       <label for="descripcion">Descripción:</label>
-                      <input id="descripcion" name="descripcion" maxlength="200" placeholder="<%=propiedad.descripcion%>">
+                      <textarea id="descripcion" name="descripcion" maxlength="200"></textarea>
                     </div>
                     <div>
-                      <button type="submit" name="accion" value="editar">editar</button>
+                      <button type="submit" name="accion" value="agregar">Agregar</button>
                     </div>
                   </form>
                   

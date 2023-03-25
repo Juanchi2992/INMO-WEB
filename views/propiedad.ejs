@@ -24,13 +24,14 @@
             </div>
         </div>
         <div class="informacion">
-            <h2>HOLA</h2>
+            <h2><%=propiedad.nombre%></h2>
+            <h3>$<%=propiedad.precio%></h3>            
+            <h3 style="text-transform: uppercase"><%=propiedad.tipo.nombre%></h3>
+            <p>Habitaciones: <%=propiedad.habitaciones%></p>            
+            <p>Baños: <%=propiedad.banos%></p>
+            <p>M2: <%=propiedad.m2%></p>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Totam vel esse maiores incidunt perferendis nostrum nulla 
-                facere repellat consectetur, iusto aliquam consequuntur 
-                ratione soluta? Omnis assumenda et exercitationem error 
-                odio.
+                <%=propiedad.descripcion%>
             </p>
         </div>
     </section>
