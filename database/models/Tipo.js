@@ -18,7 +18,7 @@ module.exports= (sequelize,dataTypes) => {
     const Tipo = sequelize.define(alias, cols, config)
 
     Tipo.associate = function(models){
-        Tipo.belongsToMany(models.Propiedades, {
+        Tipo.hasMany(models.Propiedades, {
             as: 'propiedades',
             foreignKey: 'tipo_id',
             timestamps: false

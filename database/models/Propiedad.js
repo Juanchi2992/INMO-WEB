@@ -7,11 +7,10 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         nombre: dataTypes.STRING,
-	    tipos_id: {type: dataTypes.INTEGER, foreignKey: true},
+	    tipo_id: {type: dataTypes.INTEGER, foreignKey: true},
 	    descripcion: dataTypes.STRING,
         precio: dataTypes.INTEGER,	
-	    contrato: dataTypes.BINARY,
-        disponibilidad_id: {type: dataTypes.INTEGER, foreignKey: true},
+	    contrato: dataTypes.INTEGER,
         habitaciones: dataTypes.INTEGER,
 	    banos: dataTypes.INTEGER,
 	    m2: dataTypes.INTEGER,
@@ -32,11 +31,6 @@ module.exports = (sequelize, dataTypes) => {
         Propiedad.belongsTo(models.Tipos, {
             foreignKey: 'tipo_id',
             as: 'tipo'
-        })
-
-	Propiedad.belongsTo(models.Disponibilidad, {
-            foreignKey: 'disponibilidad_id',
-            as: 'disponibilidad'
         })
 
     }

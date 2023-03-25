@@ -17,29 +17,6 @@ USE `grupo_luna`;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `disponibilidad`
---
-
-DROP TABLE IF EXISTS `disponibilidad`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `disponibilidad` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `disponibilidad`
---
-
-LOCK TABLES `disponibilidad` WRITE;
-/*!40000 ALTER TABLE `disponibilidad` DISABLE KEYS */;
-INSERT INTO `disponibilidad` VALUES (1,'Disponible'),(2,'No Disponible');
-/*!40000 ALTER TABLE `disponibilidad` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `fotos`
@@ -77,17 +54,16 @@ DROP TABLE IF EXISTS `propiedades`;
 CREATE TABLE `propiedades` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) DEFAULT NULL,
-  `tipos_id` int(11) NOT NULL,
+  `tipo_id` int(11) NOT NULL,
   `descripcion` varchar(1000) DEFAULT NULL,
   `precio` int(11) DEFAULT NULL,
   `contrato` binary(1) DEFAULT NULL,
-  `disponibilidad_id` int(11) DEFAULT NULL,
   `habitaciones` int(11) DEFAULT NULL,
   `banos` int(11) DEFAULT NULL,
   `m2` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `tipo` (`tipos_id`),
-  CONSTRAINT `tipo` FOREIGN KEY (`tipos_id`) REFERENCES `tipos` (`id`)
+  KEY `tipo` (`tipo_id`),
+  CONSTRAINT `tipo` FOREIGN KEY (`tipo_id`) REFERENCES `tipos` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

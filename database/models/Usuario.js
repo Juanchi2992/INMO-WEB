@@ -19,5 +19,10 @@ module.exports= (sequelize,dataTypes) => {
         tableName: "usuarios",
         timestamps: false,
     };
+
+    
+    const Usuario = sequelize.define(alias,cols,config)
+
+    return Usuario;
        
 }
