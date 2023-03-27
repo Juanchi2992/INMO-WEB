@@ -1,6 +1,6 @@
+const db = require('../database/models');
 const Sequelize = require('sequelize');
 const op = Sequelize.Op;
-const db = require('../database/models');
 
 const mainController = {
     venta: function(req, res, next){
@@ -143,11 +143,16 @@ const mainController = {
     
     /* No funciona */
     search: function(req, res, next){
-        var search = req.query.search
+        const search = req.query.search        
         db.Propiedades.findAll({
-            where: { nombre: {[op.like]: '%'+ search +'%'} }
+            where: {
+                nombre: {
+                    [op.like]: '%'+ search +'%' 
+                }
+            }
         })
         .then(propiedades=>{
+            console.log(search);
             res.render("venta", {search, propiedades});                
         })
         .catch(e => {console.log(e)})
