@@ -9,33 +9,6 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-/*login administrador
-app.use(express.urlencoded({ extended: true }));
-
-app.post('/login', (req, res) => {
-  const email = "juan@gmail.com";
-  const password = 1234;
-
-  // Verificar si se ingresaron los datos necesarios
-  if (!email) {
-    return res.render('login', { emailError: 'Dato necesario' });
-  }
-  if (!password) {
-    return res.render('login', { passwordError: 'Dato necesario' });
-  }
-
-  // Verificar si los datos ingresados son correctos
-  if (email !== 'usuario@example.com' || password !== 'contraseña') {
-    return res.render('login', { loginError: 'Los datos proporcionados no son correctos' });
-  }
-
-  // Si los datos son correctos, redirigir a la página de panel
-  res.redirect('/panel');
-});
-
-app.listen(3000, () => {
-  console.log('Servidor iniciado en http://localhost:3000');
-});*/
 
 
 // view engine setup
