@@ -21,6 +21,8 @@
       <tr class="info espaciado">
         <th>Código</th>
         <th>Inmueble</th>
+        <th>Dirección</th>        
+        <th>Contrato</th>
         <th>Tipo</th>
         <th>Habitaciones</th>
         <th>Baños</th>
@@ -34,7 +36,9 @@
         <tbody>
           <tr class="fila espaciado">
             <td><%= propiedades[i].id %></td>
-            <td><%= propiedades[i].nombre %></td>
+            <td><%= propiedades[i].nombre %></td>            
+            <td><%= propiedades[i].direccion %></td>                    
+            <td><%= propiedades[i].contrato_id %></td>
             <td><%= propiedades[i].tipo.nombre %></td>
             <td><%= propiedades[i].habitaciones %></td>
             <td><%= propiedades[i].banos %></td>

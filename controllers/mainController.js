@@ -5,7 +5,8 @@ const op = Sequelize.Op;
 const mainController = {
     venta: function(req, res, next){
         db.Propiedades.findAll({
-            include: [{association: 'foto', association: 'tipo'}],
+            where: { contrato_id: "2" },
+            include: [{association: 'foto', association: 'tipo', association: 'contrato'}],
             raw: true,
             nest: true,
         })
@@ -19,7 +20,8 @@ const mainController = {
 
     alquiler: function(req, res, next){
         db.Propiedades.findAll({
-            include: [{association: 'foto', association: 'tipo'}],
+            where: { contrato_id: "1" },
+            include: [{association: 'foto', association: 'tipo', association: 'contrato'}],
             raw: true,
             nest: true,
         })
@@ -44,7 +46,7 @@ const mainController = {
 
     panel: function(req, res, next){
         db.Propiedades.findAll({
-            include: [{association: 'foto', association: 'tipo'}],
+            include: [{association: 'tipo'}],
             raw: true,
             nest: true,
         })
@@ -75,8 +77,10 @@ const mainController = {
                 descripcion: req.body.descripcion,
                 tipo_id: req.body.tipo,
                 habitaciones: req.body.habitaciones,
+                contrato_id: req.body.contrato,
                 banos: req.body.banos,
                 m2: req.body.m2,
+                direccion: req.body.direccion
             }, {
                 where: {
                     id: req.params.id
@@ -94,15 +98,17 @@ const mainController = {
                 descripcion: req.body.descripcion,
                 tipo_id: req.body.tipo,
                 habitaciones: req.body.habitaciones,
+                contrato_id: req.body.contrato,
                 banos: req.body.banos,
-                m2: req.body.m2,
+                m2: req.body.m2,                
+                direccion: req.body.direccion
             }, {
                 where: {
                     id: req.params.id
                 }
             })
             .then(function(){
-                res.redirect("/venta")
+                res.redirect("/panel")
             })
             .catch(e => {console.log(e)})
         }
@@ -117,11 +123,13 @@ const mainController = {
             descripcion: req.body.descripcion,
             tipo_id: req.body.tipo,
             habitaciones: req.body.habitaciones,
+            contrato_id: req.body.contrato,
             banos: req.body.banos,
-            m2: req.body.m2,
+            m2: req.body.m2,            
+            direccion: req.body.direccion
         })
         .then(function(Propiedad){
-            res.redirect('/venta')
+            res.redirect('/panel')
             .catch(e=>{console.log(e)}) 
         })
         .catch(function(error){
@@ -131,12 +139,26 @@ const mainController = {
     },
 
     borrar: function(req, res, next){
-        db.Propiedades.destroy({
+        db.Fotos.destroy({
             where:{
-                id: req.params.id
+                propiedad_id: req.params.id
             }
         })
-        res.redirect('/panel');
+        .then(function(Foto){
+            db.Propiedades.destroy({
+                where:{
+                    id: req.params.id
+                }
+        })
+        .then(function(Propiedad){
+            res.redirect('/panel')            
+            .catch(e=>{console.log(e)})
+        })
+        .catch(function(error){
+            console.log(error)
+        });
+        
+        })
         
     },
 
@@ -148,7 +170,7 @@ const mainController = {
                 nombre: {
                     [op.like]: '%'+ search +'%' 
                 },
-                contrato: "venta"
+                contrato_id: 2
             }
         })
         .then(propiedades=>{
@@ -159,13 +181,11 @@ const mainController = {
     },
 
     searchAlquiler: function(req, res, next){
+        console.log("SEARCH: " + req.query.search)
         const search = req.query.search        
         db.Propiedades.findAll({
             where: {
-                nombre: {
-                    [op.like]: '%'+ search +'%' 
-                },                
-                contrato: "alquiler"
+                nombre: { [op.like]: '%'+ search +'%' }, contrato_id: 1
             }
         })
         .then(propiedades=>{

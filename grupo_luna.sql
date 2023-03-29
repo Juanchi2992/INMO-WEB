@@ -17,6 +17,29 @@ USE `grupo_luna`;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+--
+-- Table structure for table `contratos`
+--
+
+DROP TABLE IF EXISTS `contratos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contratos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contratos`
+--
+
+LOCK TABLES `contratos` WRITE;
+/*!40000 ALTER TABLE `contratos` DISABLE KEYS */;
+INSERT INTO `contratos` VALUES (1,'alquiler'),(2,'venta');
+/*!40000 ALTER TABLE `contratos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `fotos`
@@ -32,7 +55,7 @@ CREATE TABLE `fotos` (
   PRIMARY KEY (`id`),
   KEY `propiedad` (`propiedad_id`),
   CONSTRAINT `propiedad` FOREIGN KEY (`propiedad_id`) REFERENCES `propiedades` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,14 +80,17 @@ CREATE TABLE `propiedades` (
   `tipo_id` int(11) NOT NULL,
   `descripcion` varchar(1000) DEFAULT NULL,
   `precio` int(11) DEFAULT NULL,
-  `contrato` binary(1) DEFAULT NULL,
+  `contrato_id` int(11) DEFAULT NULL,
   `habitaciones` int(11) DEFAULT NULL,
   `banos` int(11) DEFAULT NULL,
   `m2` int(11) DEFAULT NULL,
+  `direccion` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `tipo` (`tipo_id`),
+  KEY `contrato` (`contrato_id`),
+  CONSTRAINT `contrato` FOREIGN KEY (`contrato_id`) REFERENCES `contratos` (`id`),
   CONSTRAINT `tipo` FOREIGN KEY (`tipo_id`) REFERENCES `tipos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +99,6 @@ CREATE TABLE `propiedades` (
 
 LOCK TABLES `propiedades` WRITE;
 /*!40000 ALTER TABLE `propiedades` DISABLE KEYS */;
-INSERT INTO `propiedades` VALUES (1,'Ej. 1',1,'asdfg',1000,NULL,1,3,2,100);
 /*!40000 ALTER TABLE `propiedades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-23 13:31:42
+-- Dump completed on 2023-03-29 15:24:53

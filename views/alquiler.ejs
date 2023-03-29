@@ -15,7 +15,7 @@
 
     <div class="buscador">
         <form method="GET" action="/searchAlquiler">
-            <input type="text" placeholder="¿Qué está buscando?" name="query" >
+            <input type="text" placeholder="¿Qué está buscando?" name="search" >
             <button href="" type="submit" >Buscar</button>
         </div>
         </form>
@@ -31,7 +31,8 @@
             <p>
                 <%= propiedades[i].descripcion %>
             </p>
-            <h3>$<%= propiedades[i].precio %></h3>
+            <h3>$<%= propiedades[i].precio %></h3>            
+            <h3><%= propiedades[i].direccion %></h3>
         </a>
         <% } %>
         <% } %>

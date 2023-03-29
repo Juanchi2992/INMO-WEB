@@ -9,8 +9,9 @@ module.exports = (sequelize, dataTypes) => {
         nombre: dataTypes.STRING,
 	    tipo_id: {type: dataTypes.INTEGER, foreignKey: true},
 	    descripcion: dataTypes.STRING,
+        direccion: dataTypes.STRING,
         precio: dataTypes.INTEGER,	
-	    contrato: dataTypes.INTEGER,
+	    contrato_id: dataTypes.INTEGER,
         habitaciones: dataTypes.INTEGER,
 	    banos: dataTypes.INTEGER,
 	    m2: dataTypes.INTEGER,
@@ -31,6 +32,11 @@ module.exports = (sequelize, dataTypes) => {
         Propiedad.belongsTo(models.Tipos, {
             foreignKey: 'tipo_id',
             as: 'tipo'
+        })
+
+        Propiedad.belongsTo(models.Contratos, {
+            foreignKey: 'contrato_id',
+            as: 'contrato'
         })
 
     }
