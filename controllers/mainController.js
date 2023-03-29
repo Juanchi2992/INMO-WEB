@@ -62,10 +62,11 @@ const mainController = {
         
         let pedidoProp = db.Propiedades.findByPk(req.params.id);
         let pedidoTipo = db.Tipos.findAll();
-
-        Promise.all([pedidoProp, pedidoTipo])
-        .then(function([propiedad, tipos]){
-            res.render("editar", {propiedad:propiedad, tipos});
+        let pedidoContrato = db.Contratos.findAll();
+        
+        Promise.all([pedidoProp, pedidoTipo, pedidoContrato])
+        .then(function([propiedad, tipos, contratos]){
+            res.render("editar", {propiedad:propiedad, tipos, contratos});
         });
     },
 
@@ -181,7 +182,6 @@ const mainController = {
     },
 
     searchAlquiler: function(req, res, next){
-        console.log("SEARCH: " + req.query.search)
         const search = req.query.search        
         db.Propiedades.findAll({
             where: {

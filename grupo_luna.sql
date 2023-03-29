@@ -37,7 +37,7 @@ CREATE TABLE `contratos` (
 
 LOCK TABLES `contratos` WRITE;
 /*!40000 ALTER TABLE `contratos` DISABLE KEYS */;
-INSERT INTO `contratos` VALUES (1,'alquiler'),(2,'venta');
+INSERT INTO `contratos` VALUES (1,'Alquiler'),(2,'Venta');
 /*!40000 ALTER TABLE `contratos` ENABLE KEYS */;
 UNLOCK TABLES;
 

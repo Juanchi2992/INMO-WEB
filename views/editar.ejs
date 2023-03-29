@@ -25,53 +25,68 @@
                 <form method="POST" enctype="multipart/form-data">
                     <div>
                       <label for="titulo">Título:</label>
-                      <input type="text" id="titulo" name="titulo" required placeholder="<%=propiedad.nombre%>">
+                      <input type="text" id="titulo" name="titulo" value="<%=propiedad.nombre%>" placeholder="<%=propiedad.nombre%>">
                     </div>
                     <div>
                     
                       <label for="tipo">Tipo:</label>
                       <select id="tipo" name="tipo" required>
-                        <option value="">Seleccione una opción</option>
-                        <option value="3">Departamento</option>
-                        <option value="1">Casa</option>
-                        <option value="4">Quinta</option>
-                        <option value="2">Terreno</option>
+                        <% for ( let i = 0; i < tipos.length; i++) { %>
+                          <% if (tipos[i].id == propiedad.tipo_id) { %>
+                              <option value="<%=tipos[i].id%>" selected>
+                                  <%=tipos[i].nombre%>
+                              </option>
+                          <% } else { %> 
+                          <option value="<%=tipos[i].id%>">
+                              <%=tipos[i].nombre%>
+                          </option>
+                          <% } %>
+                        <% } %>
                       </select>
                     </div>
                     <div>
                       <label for="contrato">Contrato:</label>
                       <select id="contrato" name="contrato" required>
-                        <option value="">Seleccione una opción</option>
-                        <option value="1">Alquiler</option>
-                        <option value="2">Venta</option>
+                        <% for ( let i = 0; i < contratos.length; i++) { %>
+                          <% if (contratos[i].id == propiedad.contrato_id) { %>
+                              <option value="<%=contratos[i].id%>" selected>
+                                  <%=contratos[i].nombre%>
+                              </option>
+
+                          <% } else { %> 
+                          <option value="<%=contratos[i].id%>">
+                              <%=contratos[i].nombre%>
+                          </option>
+                          <% } %>
+                        <% } %>
                       </select>
                     </div>
                     <div>
                       <label for="habitaciones">Habitaciones:</label>
-                      <input type="number" id="habitaciones" name="habitaciones" min="0" required placeholder="<%=propiedad.habitaciones%>">
+                      <input type="number" id="habitaciones" name="habitaciones" min="0" value="<%=propiedad.habitaciones%>" placeholder="<%=propiedad.habitaciones%>">
                     </div>
                     <div>
                       <label for="baños">Baños:</label>
-                      <input type="number" id="baños" name="banos" min="0" required placeholder="<%=propiedad.banos%>">
+                      <input type="number" id="baños" name="banos" min="0" value="<%=propiedad.banos%>" placeholder="<%=propiedad.banos%>">
                     </div>
                     <div>
                       <label for="m2">M2:</label>
-                      <input type="number" id="m2" name="m2" min="0" required placeholder="<%=propiedad.m2%>">
+                      <input type="number" id="m2" name="m2" min="0" value="<%=propiedad.m2%>" placeholder="<%=propiedad.m2%>">
                     </div>
                     <div>
                       <label for="precio">Precio:</label>
-                      <input type="number" id="precio" name="precio" min="0" required placeholder="<%=propiedad.precio%>">
+                      <input type="number" id="precio" name="precio" min="0" value="<%=propiedad.precio%>" placeholder="<%=propiedad.precio%>">
                     </div>
                     <div>
                       <label for="direccion">Dirección:</label>
-                      <textarea id="direccion" name="direccion" maxlength="50"></textarea>
+                      <input id="direccion" name="direccion" value="<%=propiedad.direccion%>" maxlength="50">
                     </div>
                     <div>
                       <label for="descripcion">Descripción:</label>
-                      <input id="descripcion" name="descripcion" maxlength="200" placeholder="<%=propiedad.descripcion%>">
+                      <input id="descripcion" name="descripcion" maxlength="200" value="<%=propiedad.descripcion%>" placeholder="<%=propiedad.descripcion%>">
                     </div>
                     <div>
-                      <button type="submit" name="accion" value="editar">editar</button>
+                      <button type="submit" name="accion" value="editar">ACTUALIZAR</button>
                     </div>
                   </form>
                   
