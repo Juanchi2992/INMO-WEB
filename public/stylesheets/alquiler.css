@@ -63,7 +63,7 @@ button[type="submit"]:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin: 70px 0px;
+    /*margin: 70px 0px;*/
 }
 
 .card{
@@ -106,9 +106,21 @@ button[type="submit"]:hover{
 }
 
 
+
+@media screen and (max-width: 1024px){
+    .card{
+        flex-basis: 40%;
+    }
+}
+
+
 @media screen and (max-width: 768px){
     body{
         padding: 20px 30px;
+    }
+
+    .card{
+        flex-basis: 38%;
     }
 }
 
@@ -120,5 +132,9 @@ button[type="submit"]:hover{
 
     button[type="submit"]{
         height: 1.6rem;
+    }
+
+    .card{
+        flex-basis: 80%;
     }
 }

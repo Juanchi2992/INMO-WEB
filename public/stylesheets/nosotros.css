@@ -26,3 +26,15 @@ h1{
     padding: 0px 5%;
     font-size: 1.2rem;
 }
+
+@media screen and (max-width: 768px){
+    body{
+        padding: 20px 30px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .text{
+        text-align: start;
+    }
+}
