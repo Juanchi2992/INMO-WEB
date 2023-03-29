@@ -91,6 +91,13 @@ button[type="submit"]:hover{
     font-size: 1.2rem;
 }
 
+.card p{
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
 .card h3{
     font-size: 2rem;
     color: #750317;

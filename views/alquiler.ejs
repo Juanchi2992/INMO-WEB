@@ -25,7 +25,7 @@
 
         <% if(propiedades != undefined){ %>
         <% for (let i = 0; i < propiedades.length; i++){ %>
-        <a class="card" href="/propiedad">
+        <a class="card" href="/propiedad/<%=propiedades[i].id%>">
             <h2><%= propiedades[i].nombre %></</h2>
             <img src="/images/interior1.jpg" alt="">
             <p>
@@ -35,54 +35,6 @@
         </a>
         <% } %>
         <% } %>
-
-        <a class="card" href="/propiedad">
-            <h2>DEPARTAMENTO</h2>
-            <img src="/images/interior1.jpg" alt="">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat consequuntur aut tenetur quaerat quod inventore
-                odio rem est incidunt molestias laboriosam.
-            </p>
-            <h3>$50000</h3>
-        </a>
-
-        <a class="card" href="/propiedad">
-            <h2>CASA</h2>
-            <img src="/images/interior2.jpg" alt="">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat consequuntur aut tenetur quaerat quod inventore
-                odio rem est incidunt molestias laboriosam.
-            </p>
-            <h3>$50000</h3>
-        </a>
-
-        <a class="card" href="/propiedad">
-            <h2>DEPARTAMENTO</h2>
-            <img src="/images/interior1.jpg" alt="">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat consequuntur aut tenetur quaerat quod inventore
-                odio rem est incidunt molestias laboriosam.
-            </p>
-            <h3>$50000</h3>
-        </a>
-
-        <a class="card" href="/propiedad">
-            <h2>CASA</h2>
-            <img src="/images/interior2.jpg" alt="">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat consequuntur aut tenetur quaerat quod inventore
-                odio rem est incidunt molestias laboriosam.
-            </p>
-            <h3>$50000</h3>
-        </a>
-
-    </section>
-
-
 
 
     <%- include('../partials/footer') %>

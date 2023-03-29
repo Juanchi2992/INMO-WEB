@@ -98,6 +98,13 @@ button[type="submit"]:hover{
     margin: 5px 0px;
 }
 
+.card p{
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
 
 @media screen and (max-width: 768px){
     body{

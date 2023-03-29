@@ -23,8 +23,41 @@
                 <img src="/images/interior4.jpg" alt="" class="thumbnail">
             </div>
         </div>
-        <div class="informacion">
-            <h2><%=propiedad.nombre%></h2>
+        <div class="container_informacion">
+            <div class="titulo">
+                <h2>#<%=propiedad.id%></h2>
+                <h2><%=propiedad.nombre%></h2>
+            </div>
+            <div class="informacion">
+                <div class="info">
+                    <img class="icono" src="/images/direc.png" alt="">
+                    <p><%=propiedad.direccion%></p>
+                </div>
+                <div class="info">
+                    <img class="icono" src="/images/bed.png" alt="">
+                    <p><%=propiedad.habitaciones%></p>
+                </div>
+                <div class="info">
+                    <img class="icono" src="/images/baño.png" alt="">
+                    <p><%=propiedad.banos%></p>
+                </div>
+                <div class="info"> 
+                    <img class="icono" src="/images/m2.png" alt="">
+                    <p><%=propiedad.m2%></p>
+                </div>
+            </div>
+            <p>
+                <%=propiedad.descripcion%>
+            </p>
+            <div class="precio">
+                <h3>
+                    US$
+                </h3>
+                <h3>
+                    <%=propiedad.precio%>
+                </h3>
+            </div>
+            <!-- <h2><%=propiedad.nombre%></h2>
             <h3>$<%=propiedad.precio%></h3>            
             <h3 style="text-transform: uppercase"><%=propiedad.tipo.nombre%></h3>
             <p>Habitaciones: <%=propiedad.habitaciones%></p>            
@@ -32,7 +65,7 @@
             <p>M2: <%=propiedad.m2%></p>
             <p>
                 <%=propiedad.descripcion%>
-            </p>
+            </p> -->
         </div>
     </section>
 
