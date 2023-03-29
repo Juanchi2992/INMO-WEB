@@ -141,19 +141,36 @@ const mainController = {
     },
 
     
-    /* No funciona */
-    search: function(req, res, next){
+    searchVenta: function(req, res, next){
         const search = req.query.search        
         db.Propiedades.findAll({
             where: {
                 nombre: {
                     [op.like]: '%'+ search +'%' 
-                }
+                },
+                contrato: "venta"
             }
         })
         .then(propiedades=>{
             console.log(search);
             res.render("venta", {search, propiedades});                
+        })
+        .catch(e => {console.log(e)})
+    },
+
+    searchAlquiler: function(req, res, next){
+        const search = req.query.search        
+        db.Propiedades.findAll({
+            where: {
+                nombre: {
+                    [op.like]: '%'+ search +'%' 
+                },                
+                contrato: "alquiler"
+            }
+        })
+        .then(propiedades=>{
+            console.log(search);
+            res.render("alquiler", {search, propiedades});                
         })
         .catch(e => {console.log(e)})
     }

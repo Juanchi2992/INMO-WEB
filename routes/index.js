@@ -75,7 +75,10 @@ router.get('/borrar/:id', mainController.borrar);
 /* GET propiedad page. */
 router.get('/propiedad/:id', mainController.propiedadDetalle);
 
-/* GET search. */
-router.get('/search', mainController.search);
+/* GET search ventas. */
+router.get('/searchVenta', mainController.searchVenta);
+
+/* GET search alquileres. */
+router.get('/searchAlquiler', mainController.searchAlquiler);
 
 module.exports = router;
