@@ -113,5 +113,135 @@ body{
 }
 
 @media screen and (max-width: 1024px){
+    .titulo h2{
+        font-size: 1.5rem;
+    }
+
+    .icono{
+        height: 1.3rem;
+    }
+
+    .info p{
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .precio{
+        font-size: 1.7rem;
+    }
+
+    .container .thumbnail_container .thumbnail{
+        width: 20%;
+        height: 70%;
+    }
+
+    .propiedad{
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        padding: 20px 30px;
+    }
+
+    .titulo h2{
+        font-size: 1.2rem;
+    }
+
+    .icono{
+        height: 1.1rem;
+    }
+
+    .info p{
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .container_informacion p{
+        font-size: 1.1rem;
+        margin-top: 1.2rem;
+    }
+
+    .precio{
+        font-size: 1.3rem;
+    }
+
+    .container{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .propiedad{
+        display: block;
+        justify-content: center;
+    }
+
+    .icono{
+        height: 1.5rem;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+    .container .thumbnail_container .thumbnail{
+        width: 20%;
+        height: 100%;
+    }
+
+    .container_informacion{
+        width: 90%;
+        margin-left: 0;
+        height: 240px;
+        margin-top: 2rem;
+    }
+
+    .titulo h2{
+        font-size: 1.5rem;
+    }
+
+
+    .info p{
+        font-size: 1.2rem;
+    }
+
+    .container_informacion p{
+        font-size: 1.3rem;
+    }
+
+    .precio{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .container .thumbnail_container .thumbnail{
+        width: 20%;
+        height: 90%;
+    }
+
+    .icono{
+        height: 1.4rem;
+    }
+
+    .info p{
+        font-size: 1rem;
+    }
     
+}
+
+@media screen and (max-width: 320px){
+    .container .thumbnail_container .thumbnail{
+        width: 20%;
+        height: 70%;
+    }
+
+    .container_informacion{
+        height: 300px;
+        margin-top: 1rem;
+        padding: 0;
+        width: 100%;
+    }
 }
