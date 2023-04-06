@@ -165,7 +165,7 @@ const mainController = {
         
     },
 
-    
+
     searchVenta: function(req, res, next){
         const search = req.query.search        
         db.Propiedades.findAll({
@@ -196,6 +196,10 @@ const mainController = {
         })
         .catch(e => {console.log(e)})
     },
+    
+    login: function(req,res,next) {
+        res.render("login");
+        },
 
     processLogin: function(req,res,next){
         var errors = validationResult(req);
@@ -206,7 +210,7 @@ const mainController = {
                 where: { email: req.body.email }
             })
             .then(function(usuario){
-                console.log(usuario.password + req.body.password)
+                console.log(usuario.password + " " + req.body.password)
                 // Si es undefined (no existe un usuario con ese email) devuelvo el mensaje explicandolo
                 if(usuario == undefined){
                     console.log("No existe un usuario con ese email")
@@ -215,7 +219,8 @@ const mainController = {
                 // Si encuentro un usuario que coincida, comparo las contrasenas
                 else{
                     // Si la contrasena es correcta guardo al usuario en session
-                    if(bcrypt.compareSync(req.body.password, usuario.password)){
+                    if(req.body.password == usuario.password){
+                        console.log(req.session)
                         req.session.usuarioLogueado = usuario;
 
                         // Si clickeo el boton de recordame, guardo al usuario en cookie tambien
