@@ -52,6 +52,17 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'LOGIN' });
 });
 
+/* GET crearUsuario page. 
+router.get('/crearusuario', function(req, res, next) {
+  res.render('crearusuario', { title: 'CREARUSUARIO' });
+});*/
+
+/* GET editarUsuario page. */
+router.get('/editarusuario', function(req, res, next) {
+  res.render('editarusuario', { title: 'EDITARUSUARIO' });
+});
+
+
 /* GET panel de administrador page. */
 router.get('/panel', mainController.panel);
 
