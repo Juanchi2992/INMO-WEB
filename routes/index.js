@@ -52,6 +52,9 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'LOGIN' });
 });
 
+/* POST login page. */
+router.post('/login', mainController.processLogin);
+
 /* GET crearUsuario page. 
 router.get('/crearusuario', function(req, res, next) {
   res.render('crearusuario', { title: 'CREARUSUARIO' });
