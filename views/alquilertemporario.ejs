@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/grupoluna.ico">
+    <title>Alquiler</title>
+    <link rel="stylesheet" href="/stylesheets/venta.css">
+</head>
+<body>
+
+    <%- include('../partials/header') %>
+
+    <h1>ALQUILER TEMPORARIO</h1>
+
+    <div class="buscador">
+        <form method="GET" action="/searchAlquiler">
+            <input type="text" placeholder="¿Qué está buscando?" name="search" >
+            <button href="" type="submit" >Buscar</button>
+        </div>
+        </form>
+    </div>
+
+    <section class="card-container"> 
+
+        <% if(propiedades != undefined){ %>
+        <% for (let i = 0; i < propiedades.length; i++){ %>
+        <a class="card" href="/propiedad/<%=propiedades[i].id%>">
+            <h2><%= propiedades[i].nombre %></</h2>
+            <img src="/images/interior1.jpg" alt="">
+            <p>
+                <%= propiedades[i].descripcion %>
+            </p>
+            <h3>$<%= propiedades[i].precio %></h3>            
+        </a>
+        <% } %>
+        <% } %>
+
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

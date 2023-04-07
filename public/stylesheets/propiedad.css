@@ -16,39 +16,78 @@ body{
     padding: 10px 100px;
 }
 
-.propiedad{
+/*.propiedad{
     display: flex;
     justify-content: space-evenly;
+}*/
+
+.propiedad{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/*.propiedad{
+    display: block;
+}*/
+
 .container{
-    width: 30%;
+    width: 100%;
 }
 
 .container .img_container{
     width: 100%;
+    height: 500px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    /*AGREGADO*/
+    /*padding-bottom: 40%;*/
 }
 
 .container .img_container .main_img{
-    width: 100%;
+    width: 50%;
     border-radius: 5px;
-    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);*/
+    /*object-fit: cover;*/
+
+    object-fit: contain;
+    
 }
 
 .container .thumbnail_container{
-    height: 80px;
+    /*height: 100px;
     display: flex;
+    justify-content: space-between;*/
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
     justify-content: space-between;
+    /*gap: 10px;*/
 }
 
 .container .thumbnail_container .thumbnail{
-    width: 80px;
-    border-radius: 5px;
+    width: 6px;
+    /*border-radius: 5px;*/
     cursor: pointer;
     opacity: .8;
     transition: .3s;
+    flex-basis: calc(100% / 12);
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding-bottom: 6px; 
 }
+
+.container .thumbnail_container .thumbnail img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
 
 .container .thumbnail_container .thumbnail:hover{
     opacity: 1;
@@ -56,15 +95,15 @@ body{
 
 .active{
     opacity: 1 !important;
-    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.5);*/
 }
 
 .container_informacion{
     background-color: rgba(219, 217, 217, 0.137);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
-    width: 40%;
-    margin-left: 5rem;
+    width: 60%;
+    /*margin-left: 5rem;*/
     padding: 2rem;
     border-radius: 20px;
 }
@@ -84,6 +123,7 @@ body{
 .informacion{
     display: flex;
     justify-content: space-around;
+    padding: 3rem 0;
 }
 
 .info{
@@ -107,9 +147,9 @@ body{
     display: flex;
     color: #750317;
     font-size: 2rem;
-    position: absolute;
     bottom: 0;
     right: 2rem;
+    justify-content: end;
 }
 
 @media screen and (max-width: 1024px){
@@ -132,7 +172,7 @@ body{
 
     .container .thumbnail_container .thumbnail{
         width: 20%;
-        height: 70%;
+        height: 80%;
     }
 
     .propiedad{

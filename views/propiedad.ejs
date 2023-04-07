@@ -12,6 +12,11 @@
 
     <%- include('../partials/header') %>
 
+    <div class="titulo">
+        <h2>#<%=propiedad.id%></h2>
+        <h2><%=propiedad.nombre%></h2>
+    </div>
+
     <section class="propiedad">
         <div class="container">
             <div class="img_container">
@@ -21,14 +26,36 @@
                 <img src="/images/interior2.jpg" alt="" class="thumbnail active">
                 <img src="/images/interior1.jpg" alt="" class="thumbnail">
                 <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                <img src="/images/interior6.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior5.jpg" alt="" class="thumbnail">
+                <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior5.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior1.jpg" alt="" class="thumbnail">
+                <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior2.jpg" alt="" class="thumbnail">
+                <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior6.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                <img src="/images/interior6.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                <img src="/images/interior4.jpg" alt="" class="thumbnail">
                 <img src="/images/interior4.jpg" alt="" class="thumbnail">
             </div>
         </div>
         <div class="container_informacion">
-            <div class="titulo">
-                <h2>#<%=propiedad.id%></h2>
-                <h2><%=propiedad.nombre%></h2>
-            </div>
             <div class="informacion">
                 <div class="info">
                     <img class="icono" src="/images/direc.png" alt="">
@@ -50,6 +77,12 @@
             <p>
                 <%=propiedad.descripcion%>
             </p>
+
+
+            
+
+
+
             <div class="precio">
                 <h3>
                     US$
@@ -58,15 +91,7 @@
                     <%=propiedad.precio%>
                 </h3>
             </div>
-            <!-- <h2><%=propiedad.nombre%></h2>
-            <h3>$<%=propiedad.precio%></h3>            
-            <h3 style="text-transform: uppercase"><%=propiedad.tipo.nombre%></h3>
-            <p>Habitaciones: <%=propiedad.habitaciones%></p>            
-            <p>Baños: <%=propiedad.banos%></p>
-            <p>M2: <%=propiedad.m2%></p>
-            <p>
-                <%=propiedad.descripcion%>
-            </p> -->
+            
         </div>
     </section>
 

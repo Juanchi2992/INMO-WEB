@@ -52,6 +52,11 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'LOGIN' });
 });
 
+/* GET alquiler temporario page. */
+router.get('/alquilertemporario', function(req, res, next) {
+  res.render('alquilertemporario', { title: 'ALQUILERTEMPORARIO' });
+});
+
 /* GET crearUsuario page. 
 router.get('/crearusuario', function(req, res, next) {
   res.render('crearusuario', { title: 'CREARUSUARIO' });

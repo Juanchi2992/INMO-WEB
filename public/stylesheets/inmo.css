@@ -17,11 +17,11 @@ body{
 }
 
 h1{
-    font-size: 4.3rem;
+    font-size: 6.5rem;
     font-weight: bold;
-    background: linear-gradient(to bottom, #750317, #75031828);
+    background: linear-gradient(to bottom, #750317, #75031804);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #75031828;
+    -webkit-text-fill-color: #75031804;
     font-style: italic;
 }
 
@@ -33,7 +33,7 @@ h1 span{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 5rem;
+    /*margin-top: 5rem;*/
 }
 
 .opciones a{
@@ -47,11 +47,11 @@ h1 span{
     
 }
 
-.venta{
+.venta , .alquiler{
     border-top: 3px solid #750317;
 }
 
-.venta:hover , .alquiler:hover{
+.venta:hover , .alquiler:hover , .alquilertemporario:hover{
     color: aliceblue;
 }
 
