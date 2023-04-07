@@ -1,6 +1,8 @@
+var { check, validationResult, body } = require('express-validator');
 const db = require('../database/models');
 const Sequelize = require('sequelize');
 const op = Sequelize.Op;
+const bcrypt = require('bcrypt');
 
 const mainController = {
     venta: function(req, res, next){
@@ -163,7 +165,7 @@ const mainController = {
         
     },
 
-    
+
     searchVenta: function(req, res, next){
         const search = req.query.search        
         db.Propiedades.findAll({
@@ -193,7 +195,58 @@ const mainController = {
             res.render("alquiler", {search, propiedades});                
         })
         .catch(e => {console.log(e)})
-    }
+    },
+    
+    login: function(req,res,next) {
+        res.render("login");
+        },
+
+    processLogin: function(req,res,next){
+        var errors = validationResult(req);
+
+        // Si no hay errores, busco en la base de datos un usuario con el email que esta intentando loguearse
+        if(errors.isEmpty()){
+            db.Usuarios.findOne({
+                where: { email: req.body.email }
+            })
+            .then(function(usuario){
+                console.log(usuario.password + " " + req.body.password)
+                // Si es undefined (no existe un usuario con ese email) devuelvo el mensaje explicandolo
+                if(usuario == undefined){
+                    console.log("No existe un usuario con ese email")
+                    res.render("login", { errors: [ {msg: 'No existe un usuario con ese email'}] })
+                }
+                // Si encuentro un usuario que coincida, comparo las contrasenas
+                else{
+                    // Si la contrasena es correcta guardo al usuario en session
+                    if(req.body.password == usuario.password){
+                        console.log(req.session)
+                        req.session.usuarioLogueado = usuario;
+
+                        // Si clickeo el boton de recordame, guardo al usuario en cookie tambien
+                        if(req.body.recordame != undefined){
+                            res.cookie('recordame', req.session.usuarioLogueado.email, { maxAge: 60000 })
+                        }
+
+                        // Una vez terminado el login redirecciono al home
+                        res.redirect('/panel')
+                    }
+                    // Si la contrasena es incorrecta devuelvo el mensaje
+                    else{
+                        console.log("La contraseña es incorrecta")
+                        res.render("login", { errors: [ {msg: 'La contraseña es incorrecta'}] })
+                    }
+                }                                             
+                
+            })
+            .catch(e => {
+                console.log(e)
+            })
+        }
+        else{
+            return res.render("panel", { errors: errors.errors, usuarioLogueado: req.session.usuarioLogueado })
+        }
+    },
 }
 
 module.exports = mainController;

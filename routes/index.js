@@ -48,9 +48,10 @@ router.get('/contacto', function(req, res, next) {
 });
 
 /* GET login page. */
-router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'LOGIN' });
-});
+router.get('/login', mainController.login);
+
+/* POST login page. */
+router.post('/login', mainController.processLogin);
 
 /* GET alquiler temporario page. */
 router.get('/alquilertemporario', function(req, res, next) {
