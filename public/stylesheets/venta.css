@@ -91,11 +91,22 @@ button[type="submit"]:hover{
     font-size: 1.2rem;
 }
 
-.card p{
-    overflow: hidden; 
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
+.container-info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-info .info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-info .icono{
+    
+    width: 40%;
+    height: auto;
 }
 
 .card h3{

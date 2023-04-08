@@ -6,13 +6,14 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    background-image: url(../images/fondoretrado.png);
+    background-image: url(../images/fondoletrado.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position: top right bottom;
+    background-attachment: fixed;
     font-family: 'Josefin Sans', sans-serif;
     margin: 0;
-    padding: 20px 100px;
+    padding: 10px 100px;
 }
 
 /* BARRA DE NAVEGACION */
@@ -169,16 +170,13 @@ article p{
 
 /* FOOTER */
 
-footer{
+/*footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*position: relative;*/
     left: 0;
     bottom: 0;
     width: 100%;
-    /*padding-bottom: 15px;*/
-    /*margin-left: 120px;*/
     margin-top: auto;
 }
   
@@ -210,7 +208,68 @@ align-items: center;
 footer .redes a img{
     height: 30px;
     margin-left: 20px;
+}*/
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
 }
+  
+footer #gluna{
+    height: 4rem;
+}
+  
+footer .ubicacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+footer #ubicacion{
+    height: 2.5rem;
+}
+  
+footer p{
+    font-size: 1rem;
+    color: #750317;
+}
+
+footer .redes{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+footer .redes a img{
+    height: 2.5rem;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 425px){
+    footer{
+        display: block;
+        text-align: center;
+        line-height: 4rem;
+        margin-top: 3rem;
+    }
+
+    footer .redes{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    footer .redes a img{
+        height: 2.5rem;
+        margin-left: 0;
+    }
+}
+
 
 /* RESPONSIVE*/
 

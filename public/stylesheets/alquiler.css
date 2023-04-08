@@ -16,6 +16,11 @@ body{
     padding: 10px 100px;
 }
 
+
+
+  
+  
+
 h1{
     text-align: center;
     color: #750317;
@@ -98,11 +103,22 @@ button[type="submit"]:hover{
     margin: 5px 0px;
 }
 
-.card p{
-    overflow: hidden; 
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
+.container-info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-info .info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-info .icono{
+    
+    width: 40%;
+    height: auto;
 }
 
 

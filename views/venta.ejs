@@ -26,9 +26,26 @@
             <a class="card" href="/propiedad/<%=propiedades[i].id%>">
                 <h2><%= propiedades[i].nombre %></</h2>
                 <img src="/images/interior1.jpg" alt="">
-                <p>
+
+                <div class="container-info">
+                    <div class="info">
+                        <img class="icono" src="/images/bed.png" alt="">
+                        <p><%=propiedades[i].habitaciones%></p>
+                    </div>
+                    <div class="info">
+                        <img class="icono" src="/images/baño.png" alt="">
+                        <p><%=propiedades[i].banos%></p>
+                    </div>
+                    <div class="info"> 
+                        <img class="icono" src="/images/m2.png" alt="">
+                        <p><%=propiedades[i].m2%></p>
+                    </div>
+
+                </div>
+
+                <!-- <p>
                     <%= propiedades[i].descripcion %>
-                </p>
+                </p> -->
                 <h3>U$<%= propiedades[i].precio %></h3>                         
             </a>
             <% } %>

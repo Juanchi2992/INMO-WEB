@@ -6,56 +6,104 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" type="image/x-icon" href="/images/grupoluna.ico">
     <title>Propiedad</title>
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>    -->
+    <link rel="stylesheet" type="text/css" src="../slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" src="../slick/slick-theme.css"/>
     <link rel="stylesheet" href="/stylesheets/propiedad.css">
 </head>
 <body>
 
+    <div class="overlay"></div>
+    <img class="loader" src="/images/logolunaprop.png" alt="">
+ 
+
     <%- include('../partials/header') %>
 
-    <div class="titulo">
-        <h2>#<%=propiedad.id%></h2>
-        <h2><%=propiedad.nombre%></h2>
-    </div>
 
     <section class="propiedad">
-        <div class="container">
-            <div class="img_container">
-                <img  src="/images/interior2.jpg" alt="" class="main_img">
-            </div>
+         <div class="container">
+
+            <div class="slider_for">
+                    <img src="/images/interior2.jpg" alt="" class="thumbnail active">
+                    <img src="/images/interior1.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior6.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior5.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior5.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior1.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior2.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior6.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior6.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                </div>
+
+
             <div class="thumbnail_container">
-                <img src="/images/interior2.jpg" alt="" class="thumbnail active">
-                <img src="/images/interior1.jpg" alt="" class="thumbnail">
-                <img src="/images/interior3.jpg" alt="" class="thumbnail">
-                <img src="/images/interior6.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior5.jpg" alt="" class="thumbnail">
-                <img src="/images/interior3.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior5.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior1.jpg" alt="" class="thumbnail">
-                <img src="/images/interior3.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior2.jpg" alt="" class="thumbnail">
-                <img src="/images/interior3.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior6.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior3.jpg" alt="" class="thumbnail">
-                <img src="/images/interior6.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-                <img src="/images/interior4.jpg" alt="" class="thumbnail">
-            </div>
+                    <img src="/images/interior2.jpg" alt="" class="thumbnail active">
+                    <img src="/images/interior1.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior6.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior5.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior5.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior1.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior2.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior6.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior3.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior6.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                    <img src="/images/interior4.jpg" alt="" class="thumbnail">
+                </div>
+            
         </div>
         <div class="container_informacion">
+
+            <div class="titulo">
+                <h2>#<%=propiedad.id%></h2>
+                <h2><%=propiedad.nombre%></h2>
+            </div>
+
+            <p>
+                <%=propiedad.descripcion%>
+            </p>
+    
+                
             <div class="informacion">
                 <div class="info">
                     <img class="icono" src="/images/direc.png" alt="">
@@ -74,14 +122,6 @@
                     <p><%=propiedad.m2%></p>
                 </div>
             </div>
-            <p>
-                <%=propiedad.descripcion%>
-            </p>
-
-
-            
-
-
 
             <div class="precio">
                 <h3>
@@ -97,7 +137,20 @@
 
     <%- include('../partials/footer') %>
 
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" href="/slick/slick.min.js"></script>
+
+
+
+    <script src="/javascripts/spiner.js"></script>
     <script src="/javascripts/main.js"></script>
+
+   
+
     
 </body>
 </html>

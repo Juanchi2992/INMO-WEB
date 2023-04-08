@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <title>Alquiler</title>
     <link rel="stylesheet" href="/stylesheets/alquiler.css">
 </head>
+
 <body>
+
 
     <%- include('../partials/header') %>
 
@@ -16,28 +19,46 @@
 
     <div class="buscador">
         <form method="GET" action="/searchAlquiler">
-            <input type="text" placeholder="¿Qué está buscando?" name="search" >
-            <button href="" type="submit" >Buscar</button>
-        </div>
-        </form>
+            <input type="text" placeholder="¿Qué está buscando?" name="search">
+            <button href="" type="submit">Buscar</button>
+    </div>
+    </form>
     </div>
 
-    <section class="card-container"> 
+    <section class="card-container">
 
         <% if(propiedades != undefined){ %>
         <% for (let i = 0; i < propiedades.length; i++){ %>
         <a class="card" href="/propiedad/<%=propiedades[i].id%>">
-            <h2><%= propiedades[i].nombre %></</h2>
-            <img src="/images/interior1.jpg" alt="">
-            <p>
-                <%= propiedades[i].descripcion %>
-            </p>
-            <h3>$<%= propiedades[i].precio %></h3>            
+            <h2><%= propiedades[i].nombre %></</h2> <img src="/images/interior1.jpg" alt="">
+
+
+                <div class="container-info">
+                    <div class="info">
+                        <img class="icono" src="/images/bed.png" alt="">
+                        <p><%=propiedades[i].habitaciones%></p>
+                    </div>
+                    <div class="info">
+                        <img class="icono" src="/images/baño.png" alt="">
+                        <p><%=propiedades[i].banos%></p>
+                    </div>
+                    <div class="info">
+                        <img class="icono" src="/images/m2.png" alt="">
+                        <p><%=propiedades[i].m2%></p>
+                    </div>
+
+                </div>
+
+
+
+                <h3>$<%= propiedades[i].precio %></h3>
         </a>
         <% } %>
         <% } %>
 
 
-    <%- include('../partials/footer') %>
+        <%- include('../partials/footer') %>
+
 </body>
+
 </html>
