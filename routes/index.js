@@ -15,6 +15,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 const mainController = require('../controllers/mainController');
+const userController = require('../controllers/userController');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -54,9 +55,7 @@ router.get('/login', mainController.login);
 router.post('/login', mainController.processLogin);
 
 /* GET alquiler temporario page. */
-router.get('/alquilertemporario', function(req, res, next) {
-  res.render('alquilertemporario', { title: 'ALQUILERTEMPORARIO' });
-});
+router.get('/alquilertemporario', mainController.alquilerTemp);
 
 /* GET crearUsuario page. 
 router.get('/crearusuario', function(req, res, next) {
@@ -64,9 +63,10 @@ router.get('/crearusuario', function(req, res, next) {
 });*/
 
 /* GET editarUsuario page. */
-router.get('/editarusuario', function(req, res, next) {
-  res.render('editarusuario', { title: 'EDITARUSUARIO' });
-});
+router.get('/editarusuario/:id', userController.editarUsuario);
+
+/* POST editarUsuario page. */
+router.post('/editarusuario/:id', userController.actualizarUsuario);
 
 
 /* GET panel de administrador page. */

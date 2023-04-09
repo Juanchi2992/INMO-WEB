@@ -35,6 +35,21 @@ const mainController = {
         }) 
     },
 
+    alquilerTemp: function(req, res, next){
+        db.Propiedades.findAll({
+            where: { contrato_id: "3" },
+            include: [{association: 'foto', association: 'tipo', association: 'contrato'}],
+            raw: true,
+            nest: true,
+        })
+        .then(function(propiedades){
+            res.render("alquilertemporario", { propiedades })
+        })
+        .catch(function(error){
+            console.log(error);
+        }) 
+    },
+
     propiedadDetalle: function(req, res, next){
         db.Propiedades.findByPk(req.params.id, {
             include: { all: true }
