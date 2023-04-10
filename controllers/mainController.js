@@ -8,11 +8,14 @@ const mainController = {
     venta: function(req, res, next){
         db.Propiedades.findAll({
             where: { contrato_id: "2" },
-            include: [{association: 'foto', association: 'tipo', association: 'contrato'}],
+            include: [{ association: 'tipo', association: 'contrato', association: 'foto'}],
             raw: true,
             nest: true,
         })
         .then(function(propiedades){
+            propiedades.forEach(propiedad => {
+                
+            })
             res.render("venta", { propiedades })
         })
         .catch(function(error){

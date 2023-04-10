@@ -28,7 +28,7 @@ CREATE TABLE `contratos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `contratos` (
 
 LOCK TABLES `contratos` WRITE;
 /*!40000 ALTER TABLE `contratos` DISABLE KEYS */;
-INSERT INTO `contratos` VALUES (1,'Alquiler'),(2,'Venta');
+INSERT INTO `contratos` VALUES (1,'Alquiler'),(2,'Venta'),(3,'Alquiler Temp');
 /*!40000 ALTER TABLE `contratos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,11 +51,10 @@ DROP TABLE IF EXISTS `fotos`;
 CREATE TABLE `fotos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ruta` varchar(45) DEFAULT NULL,
-  `propiedad_id` int(11) DEFAULT NULL,
+  `propiedad_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `propiedad` (`propiedad_id`),
-  CONSTRAINT `propiedad` FOREIGN KEY (`propiedad_id`) REFERENCES `propiedades` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  KEY `propiedad` (`propiedad_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,6 +63,7 @@ CREATE TABLE `fotos` (
 
 LOCK TABLES `fotos` WRITE;
 /*!40000 ALTER TABLE `fotos` DISABLE KEYS */;
+INSERT INTO `fotos` VALUES (11,'aft flash i.png',31),(13,'8 (2).png',32),(14,'arriba.png',33),(15,'flor.png',33),(16,'aft flash i.png',33),(17,'Barro II.png',34),(18,'SyL II.png',34),(19,'Creador I.png',34),(20,'SyL II.png',35),(21,'SyL I.png',35);
 /*!40000 ALTER TABLE `fotos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -90,7 +90,7 @@ CREATE TABLE `propiedades` (
   KEY `contrato` (`contrato_id`),
   CONSTRAINT `contrato` FOREIGN KEY (`contrato_id`) REFERENCES `contratos` (`id`),
   CONSTRAINT `tipo` FOREIGN KEY (`tipo_id`) REFERENCES `tipos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,6 +99,7 @@ CREATE TABLE `propiedades` (
 
 LOCK TABLES `propiedades` WRITE;
 /*!40000 ALTER TABLE `propiedades` DISABLE KEYS */;
+INSERT INTO `propiedades` VALUES (31,'Casa',1,'cvzvzcvzx',20500,2,1,3,200,'fvsdff'),(32,'JOjo7',1,'ufkufkfk',7898,2,7,7,78,'kjfhkjjfkf'),(33,'Fosos',1,'csñvkjsgfsdklfgdslfksdjgfkldsgfcsdlkcgds',12345,1,1,23,2,'svd,fdbf.kdabc'),(34,'CASONA',4,'adfadfdafdafdsfsdfa',122200,2,2,1,200,'sffgdfdfadfsf'),(35,'KAJFJSk',4,'d,gdslhadasldhsgldjHAS',219000,1,1,2,2200,'daslcgdslcdgh'),(36,'Ejemplo',4,'cñjvkncsñvkjbvñckvñvkcvkcvcñkjvd vjñdz',33445,2,2,2,200,'cskjvncskljvcblkvjxcbvbklj');
 /*!40000 ALTER TABLE `propiedades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +149,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Admin','1111','a@a.com');
+INSERT INTO `usuarios` VALUES (1,'Admin','aaaa1111','a@a.com');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -160,3 +161,5 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-04-10 17:23:12

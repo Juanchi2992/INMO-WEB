@@ -25,8 +25,7 @@
             <% for (let i = 0; i < propiedades.length; i++){ %>
             <a class="card" href="/propiedad/<%=propiedades[i].id%>">
                 <h2><%= propiedades[i].nombre %></</h2>
-                <img src="/images/interior1.jpg" alt="">
-
+                <img src="/images/<%=propiedades[i].foto.ruta%>" alt="">
                 <div class="container-info">
                     <div class="info">
                         <img class="icono" src="/images/bed.png" alt="">
